@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { AppState } from "../flow/AppState"
+import { observe } from 'mobx';
 
 @observer
-class Display extends React.Component<{appState: AppState, model: string}, {}> {
+class Display extends React.Component<{store: any, model: string}, {}> {
+    constructor(props){
+        super(props)
+
+        observe(this.props.store, (change) => console.log(change))
+    }
 
     render() {
         return (
             <p>
-                {this.props.appState.store.property(this.props.model)}
+                {this.props.store[this.props.model]}
             </p>
         )
      }

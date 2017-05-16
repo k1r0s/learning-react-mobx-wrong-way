@@ -1,18 +1,17 @@
-import * as React from 'react';
+import * as React from 'react';undefined
 import { observer } from 'mobx-react';
-import { AppState } from "../flow/AppState"
 
 @observer
-class MyInput extends React.Component<{appState: AppState, model: string}, {}> {
+class MyInput extends React.Component<{store: any, model: string}, {}> {
 
-    handleChange = (e: any) => {
-        this.props.appState.store.property(this.props.model, e.target.value)
+    handleChange(e: any){
+        this.props.store[this.props.model] = e.target.value
     }
 
     render() {
         return (
             <div>
-                <input onChange={this.handleChange} />
+                <input onChange={this.handleChange.bind(this)} />
             </div>
         )
      }

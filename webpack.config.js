@@ -1,25 +1,20 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require("path");
 
 module.exports = {
-  devtool: 'source-map',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    './src/index'
-  ],
+  devtool: "source-map",
+  entry: "./src/index",
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js"
   },
   resolve: {
-    extensions: ['', '.js', '.ts', '.tsx']
+    extensions: ["", ".js", ".ts", ".tsx"]
   },
   module: {
     loaders: [{
       test: /\.tsx?$/,
-      loaders: ['awesome-typescript-loader'],
-      include: path.join(__dirname, 'src')
+      loaders: ["awesome-typescript-loader"],
+      include: path.join(__dirname, "src")
     }]
   }
 };

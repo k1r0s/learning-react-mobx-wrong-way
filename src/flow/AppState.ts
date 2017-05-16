@@ -1,12 +1,10 @@
 import {observable} from 'mobx';
-import {Store} from './Store';
 
 class AppState {
-    @observable store: Store
-
-    constructor(){
-        this.store = new Store()
+    @observable store: any = {
+        prop1: "",
+        prop2: "",
     }
 }
 
-export { AppState }
+export default new AppState()

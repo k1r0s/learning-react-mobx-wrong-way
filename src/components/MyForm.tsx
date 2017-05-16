@@ -1,25 +1,21 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { AppState } from "../flow/AppState"
 import { MyInput } from "./MyInput"
 
-
-@observer
-class MyForm extends React.Component<{appState: AppState}, {}> {
+class MyForm extends React.Component<{store: any}, null> {
 
     render() {
         return (
             <section>
                 <div>
-                    <MyInput appState={this.props.appState} model="prop1"/>
+                    <MyInput store={this.props.store} model="prop1"/>
                 </div>
                 <div>
-                    <MyInput appState={this.props.appState} model="prop2"/>
+                    <MyInput store={this.props.store} model="prop2"/>
                 </div>
             </section>
         )
      }
-
 }
 
 export { MyForm }
