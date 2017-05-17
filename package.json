@@ -1,10 +1,7 @@
 {
-  "name": "Crying with react and mobx",
+  "name": "learning-react-mobx-wrong-way",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "start": "node server.js"
-  },
   "keywords": [],
   "author": "k1r0s",
   "license": "MIT",

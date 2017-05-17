@@ -1,4 +1,4 @@
-import * as React from 'react';undefined
+import * as React from "react";undefined
 import { observer } from 'mobx-react';
 
 @observer
